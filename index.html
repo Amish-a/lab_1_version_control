@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Вітальна сторінка</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #d6e2f8, #655dcf);
+      color: #1f2937;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      transition: background 0.4s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin: 1em 0 0.5em;
+      color: #0f172a;
+      text-align: center;
+      transition: transform 0.4s ease;
+    }
+
+    h1:hover {
+      transform: scale(1.08);
+    }
+
+    button {
+      padding: 0.8em 2em;
+      font-size: 1.1rem;
+      background-color: #3b82f6;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: background-color 0.3s, transform 0.2s;
+      margin-top: 1em;
+    }
+
+    button:hover {
+      background-color: #2563eb;
+      transform: scale(1.03);
+    }
+
+    footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #dee0e2;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="greeting">Щирі вітання!</h1>
+  <button onclick="changeGreeting()">Показати інше</button>
+
+  <footer>&copy; 2025 Хардан Аміна, АІ-235 — Усі права захищено</footer>
+
+  <script>
+    const greetings = [
+      "Щирі вітання!",
+      "Доброго дня, друже!",
+      "Хай щастить!",
+      "Вітаємо на нашому сайті!",
+      "🌟 Гарного настрою!",
+      "Тепла та радості сьогодні!",
+      "Будь щасливий тут і зараз!"
+    ];
+    let index = 0;
+
+    function changeGreeting() {
+      index = (index + 1) % greetings.length;
+      document.getElementById("greeting").textContent = greetings[index];
+    }
+  </script>
+
+</body>
+</html>
